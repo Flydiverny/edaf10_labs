@@ -23,7 +23,7 @@ public class ForAll implements Expr {
 	@Override
 	public Expr substitute(Variable y, Term t) {
 		if(x.equals(y)) {
-			return this;
+			return new ForAll(x, e);
 		}
 		
 		Set<Variable> set = new HashSet<Variable>();
