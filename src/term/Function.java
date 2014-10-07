@@ -22,8 +22,6 @@ public class Function implements Term {
 	@Override
 	public Term substitute(Variable x, Term term) {
 		// f(x)[x\f(x)] = f(f(x))
-
-			        
 		return new Function(name, this.list.substitute(x, term));
 	}
 }

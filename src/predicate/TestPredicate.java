@@ -20,7 +20,7 @@ public class TestPredicate extends TestTerm {
         assertEqualsByToString(py, px.substitute(x, y));
     }
 
-    public void testImplies() { // (P(x) -> P(y)[x\y] = P(y) -> P(y)
+    public void testImplies() { // (P(x) -> P(y))[x\y] = P(y) -> P(y)
         Expr pyImpliesPy = new Implies(py, py);
         assertEqualsByToString(pyImpliesPy, pxImpliesPy.substitute(x, y));
     }
@@ -29,7 +29,7 @@ public class TestPredicate extends TestTerm {
         assertEqualsByToString(forAllxPx, forAllxPx.substitute(x, y));
     }
 
-    public void testForAll2() { // (FORALL x . P(x))[x\y] = FORALL x . P(x)
+    public void testForAll2() { // (FORALL x . P(y))[y\z] = FORALL x . P(z)
         assertEqualsByToString(forAllxPz, forAllxPy.substitute(y, z));
     }
 
